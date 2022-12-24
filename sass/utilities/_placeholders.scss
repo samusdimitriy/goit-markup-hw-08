@@ -1,0 +1,22 @@
+%position {
+  display: flex;
+  align-items: center;
+}
+
+%list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+%link {
+  text-decoration: none;
+  color: inherit;
+  transition: color $transition;
+}
+
+%upper-text {
+  text-transform: uppercase;
+}

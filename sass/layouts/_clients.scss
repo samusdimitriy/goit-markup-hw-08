@@ -1,0 +1,79 @@
+.clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+  text-align: center;
+  @media screen and (max-width: 767px) {
+    padding-top: 50px;
+    padding-bottom: 60px;
+    margin: 0;
+  }
+  &__titel {
+    margin-top: 0;
+    margin-bottom: 50px;
+    @media screen and (max-width: 767px) {
+      font-size: 28px;
+      line-height: 1.18;
+      margin-bottom: 30px;
+    }
+
+    @media screen and (min-width: 767px) {
+    }
+  }
+  &__container {
+    // display: block;
+    @media screen and (max-width: 767px) {
+    }
+
+    @media screen and (min-width: 768px) {
+    }
+  }
+}
+
+.company {
+  &__list {
+    @extend %list;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin: -15px;
+
+    // padding: 0;
+
+    @media screen and (min-width: 768px) {
+      gap: 30px;
+    }
+  }
+
+  &__item {
+    min-width: 170px;
+    @media screen and (max-width: 767px) {
+      width: calc((100% - 2 * 30px) / 2);
+      margin: 15px;
+      min-width: 210px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+      width: calc((100% - 3 * 30px) / 3);
+    }
+  }
+}
+
+.company__link {
+  @extend %position;
+  border: 1px solid #ececec;
+  border-color: rgba(175, 177, 184, 1);
+  border-radius: 4px;
+  // min-width: 170px;
+  min-height: 92px;
+  justify-content: center;
+  fill: $color-icon;
+  transition: fill $transition, border-color $transition;
+
+  @media screen and (max-width: 767px) {
+  }
+  &:hover,
+  &:focus {
+    border-color: $accent-text-color;
+    fill: $accent-text-color;
+  }
+}

@@ -1,0 +1,77 @@
+.our-team {
+  background-color: #f5f4fa;
+  padding: 94px 0;
+  &__title {
+    margin-bottom: 50px;
+  }
+}
+
+.card-list {
+  gap: 30px;
+
+  @media screen and (max-width: 1199px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+    gap: 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    gap: 30px;
+  }
+
+  @extend %list;
+  &__item {
+    background-color: $white-color;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+    @media screen and (max-width: 1199px) {
+      width: calc((100% - 2 * 30px) / 2);
+      margin: 15px;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+  &__img {
+    display: block;
+    width: 100%;
+  }
+  &__wrapper {
+    @extend %position;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 32px 16px;
+  }
+  &__title {
+    margin-bottom: 10px;
+  }
+}
+
+.social {
+  @extend %list;
+  gap: 10px;
+  &-wrapper {
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px 30px;
+  }
+  &__link {
+    @extend %link;
+    @extend %position;
+    justify-content: center;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    background: inherit;
+    fill: $color-icon;
+    transition: fill $transition, background $transition;
+  }
+  &__link:hover,
+  &__link:focus {
+    background-color: $accent-text-color;
+    fill: $white-color;
+  }
+}

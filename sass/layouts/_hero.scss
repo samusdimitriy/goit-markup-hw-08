@@ -1,0 +1,30 @@
+.hero {
+  display: block;
+  text-align: center;
+  background-color: $background-color;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/maket2/Img.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 1600px;
+  margin: 0 auto;
+  @media screen and (min-width: 768px) {
+  }
+  &__title {
+    @extend %upper-text;
+    max-width: 696px;
+    padding: 10px 32px;
+    margin: 0 auto 30px;
+    @media screen and (max-width: 767px) {
+      font-size: 26px;
+      line-height: 1.62;
+    }
+  }
+  &__container {
+    padding: 200px 0;
+    @media screen and (max-width: 767px) {
+      padding: 118px 0;
+    }
+  }
+}
