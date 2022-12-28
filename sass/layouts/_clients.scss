@@ -1,7 +1,7 @@
 .clients {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding: 94px 0;
   text-align: center;
+
   @media screen and (max-width: 767px) {
     padding-top: 50px;
     padding-bottom: 60px;
@@ -15,17 +15,6 @@
       line-height: 1.18;
       margin-bottom: 30px;
     }
-
-    @media screen and (min-width: 767px) {
-    }
-  }
-  &__container {
-    // display: block;
-    @media screen and (max-width: 767px) {
-    }
-
-    @media screen and (min-width: 768px) {
-    }
   }
 }
 
@@ -35,17 +24,14 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    margin: -15px;
-
-    // padding: 0;
-
-    @media screen and (min-width: 768px) {
+    @include tablet {
       gap: 30px;
     }
   }
 
   &__item {
     min-width: 170px;
+
     @media screen and (max-width: 767px) {
       width: calc((100% - 2 * 30px) / 2);
       margin: 15px;
@@ -59,13 +45,11 @@
 }
 
 .company__link {
-  @extend %position;
+  @include position;
   border: 1px solid #ececec;
   border-color: rgba(175, 177, 184, 1);
   border-radius: 4px;
-  // min-width: 170px;
   min-height: 92px;
-  justify-content: center;
   fill: $color-icon;
   transition: fill $transition, border-color $transition;
 

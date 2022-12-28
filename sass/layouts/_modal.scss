@@ -7,6 +7,7 @@
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   transition: opacity var(--transition);
+
   &.is-hidden {
     opacity: 0;
     pointer-events: none;
@@ -21,8 +22,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 528px;
-  min-height: 581px;
+  min-width: 310px;
   padding: 40px;
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -31,9 +31,19 @@
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
   transition: transform var(--transition), opacity var(--transition), visibility var(--transform);
+
+  @include tel {
+    min-width: 450px;
+  }
+
+  @include desktop {
+    min-width: 528px;
+  }
+
   .backdrop.is-hidden & {
     transform: translate(-50%, -50%) scale(0.9);
   }
+
   &__title {
     font-weight: 700;
     font-size: 20px;
@@ -46,11 +56,10 @@
 
 .close-btn {
   position: absolute;
+  @include position;
   top: 8px;
   right: 8px;
   padding: 0;
-  display: flex;
-  justify-content: center;
   background: #ffffff;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -75,8 +84,9 @@
 }
 
 .form {
-  @extend %position;
+  @include position;
   flex-direction: column;
+
   &__label {
     font-weight: 400;
     font-size: 12px;
@@ -85,24 +95,30 @@
     color: var(--second-text-color);
     margin-bottom: 4px;
   }
+
   &__field {
     display: flex;
     flex-direction: column;
     position: relative;
     margin-bottom: 28px;
   }
+
   &__field:not(:last-child) {
     margin-bottom: 28px;
   }
+
   &__input {
     width: 100%;
-    padding: 11px 45px;
+    height: 40px;
+    padding: 11px;
     border: 1px solid;
     border-radius: 4px;
     border-color: rgba(33, 33, 33, 0.2);
     transition: border-color var(--transition);
     outline: none;
+    padding-left: 40px;
   }
+
   &__textarea {
     width: 100%;
     height: 120px;
@@ -118,14 +134,17 @@
     outline: none;
     transition: border-color $transition;
   }
+
   &__block {
     position: relative;
   }
+
   &__list {
     @extend %list;
     width: 100%;
     flex-direction: column;
   }
+
   &__icon {
     position: absolute;
     top: 50%;
@@ -134,55 +153,56 @@
     fill: var(--main-text-color);
     transition: fill $transition;
   }
+
   &__textarea {
     resize: none;
   }
-  &__check {
-    @extend %position;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.71;
-    letter-spacing: 0.03em;
+
+  .checkbox {
     color: $second-text-color;
-  }
-  &__checkbox {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    position: absolute;
-  }
-  &__checkbox:checked + &__check--icon {
-    background-color: $accent-text-color;
-    background-position: center;
-    background-origin: border-box;
-    border-color: $accent-text-color;
-    background-image: url(../images/maket2/Vector/checked.svg);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
-  &__check--icon {
-    display: inline-block;
-    margin-right: 10px;
-    width: 16px;
-    height: 16px;
-    border: 2px solid $main-text-color;
-    border-radius: 3px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0));
-    transition: background $transition, filter $transition;
-  }
-  &__check--link {
-    margin-left: 5px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.71;
-    letter-spacing: 0.03em;
-    color: $accent-text-color;
-    text-decoration-line: underline;
-  }
-  &__check--label {
-    @extend %position;
-    cursor: pointer;
+
+    @media screen and (max-width: 479px) {
+      flex-direction: column;
+    }
+
+    @include desktop {
+      @include fontStyle($fw: 400, $fs: 14, $lh: 1.71, $ls: 0.03);
+    }
+
+    &__input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      position: absolute;
+    }
+
+    &__icon {
+      display: inline-block;
+      margin-right: 8px;
+      width: 16px;
+      height: 16px;
+      border: 2px solid $main-text-color;
+      border-radius: 3px;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0));
+      transition: background $transition, filter $transition;
+    }
+
+    &__link {
+      margin-left: 5px;
+      color: $accent-text-color;
+      text-decoration-line: underline;
+    }
+
+    &__label {
+      cursor: pointer;
+    }
+
+    &__btn {
+      margin-top: 30px;
+    }
   }
 }
+
 .form__input {
   .form__block:focus-within & {
     border-color: $accent-text-color;
@@ -201,7 +221,13 @@
   }
 }
 
-.btn.main-btn {
-  margin: 30px auto 0 auto;
-  width: 200px;
+.checkbox__icon {
+  .checkbox__input:checked + & {
+    background-color: $accent-text-color;
+    background-position: center;
+    background-origin: border-box;
+    border-color: $accent-text-color;
+    background-image: url(../images/maket2/Vector/checked.svg);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
 }

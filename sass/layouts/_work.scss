@@ -1,13 +1,16 @@
 .work {
-  display: none;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 1199px) {
+    display: none;
   }
+
   & .c-title-14-700 {
     color: $white-color;
   }
+
   &-container {
     padding-bottom: 94px;
   }
+
   &__title {
     margin-bottom: 50px;
   }
@@ -16,18 +19,20 @@
 .block-img {
   @extend %list;
   gap: 15px;
+
   &__item {
     position: relative;
   }
+
   &__pic {
     height: 100%;
   }
+
   &__wrapper {
     @extend %upper-text;
     position: absolute;
-    @extend %position;
+    @include position;
     content: '';
-    justify-content: center;
     width: 100%;
     height: 70px;
     bottom: 0;

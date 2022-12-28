@@ -1,18 +1,15 @@
 .advances {
-  &__container {
-    // padding: 60px 0;
-  }
   &__list {
     @extend %list;
     display: block;
     margin: 60px 0;
 
-    @media screen and (min-width: 768px) {
+    @include tablet {
       margin: 45px -15px;
       display: flex;
       flex-wrap: wrap;
     }
-    @media screen and (min-width: 1200px) {
+    @include desktop {
       display: flex;
       flex-wrap: nowrap;
       margin: 90px 0;
@@ -22,16 +19,14 @@
   &__item {
     margin-bottom: 30px;
 
-    @media screen and (min-width: 768px) {
+    @include tablet {
       width: calc((100% - 2 * 30px) / 2);
       margin: 15px;
     }
   }
 
   &__svg {
-    @extend %position;
-    justify-content: center;
-    // min-width: 270px;
+    @include position;
     min-height: 120px;
     background-color: #f5f4fa;
     border-radius: 4px;

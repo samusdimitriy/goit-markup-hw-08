@@ -2,11 +2,10 @@
   display: block;
   color: $white-color;
   background-color: $background-color;
-  // max-width: inherit;
+
   &__container {
     display: flex;
     flex-wrap: wrap;
-    // justify-content: center;
     align-items: baseline;
     padding-bottom: 60px;
 
@@ -15,7 +14,7 @@
       justify-content: space-around;
     }
 
-    @media screen and (min-width: 1200px) {
+    @include desktop {
       flex-wrap: nowrap;
     }
 
@@ -26,15 +25,19 @@
       align-items: center;
     }
   }
+
   &__left {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
+    min-width: 232px;
+
     @media screen and (max-width: 1199px) {
       text-align: center;
       width: 50%;
     }
   }
+
   &__list {
     @extend %list;
     display: flex;
@@ -43,6 +46,7 @@
     margin: 0;
     gap: 9px;
   }
+
   &__sub-input {
     padding: 15px 16px;
     display: flex;
@@ -56,32 +60,38 @@
     border-radius: 4px;
     background-color: inherit;
     color: rgba(255, 255, 255, 0.6);
+
     @media screen and (max-width: 767px) {
       margin: 0;
     }
   }
   &__sub-form {
     display: flex;
+
     @media screen and (max-width: 1199px) {
       flex-direction: column;
       align-items: center;
       gap: 20px;
     }
   }
-  &__main-btn {
+
+  &__btn {
     display: flex;
     height: 50px;
   }
+
   &__sub-text {
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;
     letter-spacing: 0.06em;
   }
+
   &__sub-icon {
     margin-left: 10px;
     fill: $white-color;
   }
+
   &__link {
     @extend %link;
     font-style: normal;
@@ -90,17 +100,21 @@
     letter-spacing: 0.03em;
     color: rgba(255, 255, 255, 0.6);
   }
+
   &__link--white {
     color: #ffffff;
   }
+
   &__sub-title {
     @extend %upper-text;
     color: $white-color;
     margin-bottom: 20px;
+
     @media screen and (max-width: 1199px) {
       text-align: center;
     }
   }
+
   &__logo {
     color: $white-color;
   }
@@ -116,6 +130,7 @@
 
 .footer-join {
   margin-left: 70px;
+
   @media screen and (max-width: 1199px) {
     margin-right: auto;
     text-align: center;
@@ -124,6 +139,7 @@
   @media screen and (max-width: 767px) {
     margin: 0;
   }
+
   &__title {
     @extend %upper-text;
     margin-top: 0;
@@ -131,9 +147,10 @@
     color: $white-color;
   }
 }
+
 .social {
-  justify-content: center;
   &__link--light {
+    fill: $white-color;
     background: rgba(255, 255, 255, 0.1);
   }
 }
@@ -142,12 +159,16 @@
 
 .subscribe {
   width: 100%;
-  margin-left: 93px;
-  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 
-  @media screen and (max-width: 1199px) {
-    display: flex;
-    flex-direction: column;
-    margin: 60px 0;
+  @include tablet {
+    margin-top: 60px;
+  }
+
+  @include desktop {
+    margin-left: 93px;
+    margin-top: 72px;
   }
 }

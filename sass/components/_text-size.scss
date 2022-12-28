@@ -1,41 +1,46 @@
 .c-title-18-400 {
-  @include fontStyle(400, 18px, 1.56, 0.03em);
+  @include fontStyle(400, 18, 1.56, 0.03);
   color: $white-color;
 }
 
 .c-title-18-700 {
-  @include fontStyle(700, 18px, 2, 0.06em);
+  @include fontStyle(700, 18, 2, 0.06);
   color: $main-text-color;
 }
 
 .c-title-36 {
-  @include fontStyle(700, 36px, 1.67, 0.03em);
+  @include fontStyle(700, 36, 1.67, 0.03);
   text-align: center;
   color: $main-text-color;
 }
 
 .c-title-14-500 {
-  @include fontStyle(500, 14px, 1.14, 0.02em);
+  @include fontStyle(500, 14, 1.14, 0.02);
   color: $main-text-color;
 }
 
 .c-title-14-700 {
-  @include fontStyle(700, 14px, 1.14, 0.03em);
+  @include fontStyle(700, 14, 1.14, 0.03);
   color: $main-text-color;
 }
 
 .c-title-44 {
-  @include fontStyle(900, 44px, 1.36, 0.06em);
+  @include fontStyle(900, 44, 1.36, 0.06);
   text-align: center;
   color: $white-color;
 }
 
 .c-title-16-500 {
-  @include fontStyle(500, 16px, 1.19, 0.03em);
+  @include fontStyle(500, 16, 1.19, 0.03);
   color: $main-text-color;
 }
 
 .c-title-16-400 {
-  @include fontStyle(400, 16px, 1.19, 0.03em);
+  @include fontStyle(400, 16, 1.19, 0.03);
+  color: $second-text-color;
+}
+
+.c-title-12-400 {
+  @include fontStyle(400, 12, 1.17, 0.03);
   color: $second-text-color;
 }
